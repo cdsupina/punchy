@@ -2,7 +2,10 @@
 #![allow(clippy::forget_non_drop)]
 #![allow(clippy::too_many_arguments)]
 
-use bevy::{asset::AssetServerSettings, ecs::bundle::Bundle, log::LogSettings, prelude::*};
+use bevy::{
+    asset::AssetServerSettings, ecs::bundle::Bundle, log::LogSettings, prelude::*,
+    window::WindowMode,
+};
 use bevy_kira_audio::{AudioApp, AudioPlugin};
 use bevy_parallax::{ParallaxPlugin, ParallaxResource};
 use bevy_rapier2d::prelude::*;
@@ -146,6 +149,9 @@ fn main() {
     app.insert_resource(WindowDescriptor {
         title: "Fish Fight Punchy".to_string(),
         scale_factor_override: Some(1.0),
+        width: 1280.0,
+        height: 1024.0,
+        mode: WindowMode::SizedFullscreen,
         ..default()
     });
 
